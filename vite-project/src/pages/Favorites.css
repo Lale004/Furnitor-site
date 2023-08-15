@@ -1,0 +1,750 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200;300;400&family=Outfit:wght@300;400;500&display=swap");
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+/* .container{
+  width: 1140px;
+  margin: 0 auto;
+  max-width:95%;
+} */
+
+
+
+.favorite{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.fovorite-img img{
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.fovorite-img {
+  position: relative;
+  height: 250px;
+  /* width: 400px !important; */
+  object-fit: cover;
+}
+.favorit-box{
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+transition: 1s;
+border-radius: 20px;
+overflow: hidden;
+gap: 20px;
+height: 380px;
+}
+.favorit-box:hover{
+  box-shadow: -1px 3px 32px -4px rgba(183,175,175,0.53);
+  -webkit-box-shadow: -1px 3px 32px -4px rgba(183,175,175,0.53);
+  -moz-box-shadow: -1px 3px 32px -4px rgba(183,175,175,0.53);
+}
+.fovorite-img span{
+  cursor: pointer;
+position: absolute;
+top: 5px;
+right: 5px;
+width: 30px;
+height: 30px;
+display: flex;
+font-size: 20px;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+background-color: #fff;
+color: #3a5041;
+border: 1px solid #3a5041;
+}
+.favorite-text{
+  padding: 0 10px;
+  width: 100%;
+  
+}
+.favorite-text h1{
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 200px;
+  color:#3c423e;
+  line-height: 35px;
+  letter-spacing: 2px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.fov-search{
+  width: 100%;
+  padding:0 20px ;
+  max-width: 600px;
+  position: relative;
+  margin: 0 auto;
+}
+.fov-search-icon{
+position: absolute;
+top: 30%;
+right: 40px;
+color:#b3b0b0 ;
+font-size: 22px;
+}
+.fov-search input{
+  width: 100%;
+  padding: 14px 30px;
+  border-radius: 60px;
+font-size: 20px;
+color: #161616;
+  border:0.2px solid #ede9e9;
+  box-shadow: 1px -1px 18px -1px rgba(239, 236, 236, 0.66);
+-webkit-box-shadow: 1px -1px 18px -1px rgba(240, 238, 238, 0.66);
+-moz-box-shadow: 1px -1px 18px -1px rgba(241, 238, 238, 0.66);
+
+}
+.fov-search input::placeholder{
+  color: #b9b5b5;
+  font-size: 18px;
+}
+.fov-search input:focus{
+  box-shadow: 1px -1px 18px -1px rgba(226,221,221,0.66);
+  -webkit-box-shadow: 1px -1px 18px -1px rgba(226,221,221,0.66);
+  -moz-box-shadow: 1px -1px 18px -1px rgba(226,221,221,0.66);
+  outline:1px solid #cecccc;
+}
+.fov-titl{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.fov-titl p{
+  font-size: 20px;
+  font-family: 'Outfit', sans-serif; 
+  color: #5d5b5b;
+  font-weight: 300;
+}
+.fovorite-btn{
+  width: 90px;
+  height: 40px;
+  border-radius: 60px;
+  border: none;
+  font-size: 20px;
+  background-color: #3a5041;
+  color: #fff;
+  transition: 0.8s ease-in-out;
+}
+.fovorite-btn:hover{
+background-color:  #b58269;
+}
+.no-favorit{
+  margin-bottom: 80px;
+
+  /* margin: 0 auto; */
+  text-align: center;
+}
+.no-favorit h1{
+  text-align: center;
+ font-size: 30px;
+ color: #161616;
+ 
+}
+.no-favorit p{
+ max-width: 600px;
+  margin: 0 auto;
+  line-height: 26px;
+  margin-top: -10px;
+color: #939393;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+.no-favorit img{
+  border-radius: 50%;
+  width: 250px;
+
+  height: 250px;
+}
+.no-favorit button{
+  background-color: #3a5041;
+  font-family: Outfit;
+  color: #ffffff;
+  padding: 14px 40px;
+  display: block;
+  margin: 0 auto;
+  border: none;
+transition: all 0.8s ease;
+  font-size: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.no-favorit button:hover{
+  background-color: #b58269;
+}
+.fovorite-btn.clicked {
+  background-color: #f00; /* Change this to the color you want */
+}
+
+
+
+
+
+
+
+
+
+
+.banner{
+  width: 100%;
+  position: relative;
+
+
+}
+
+.banner-images{
+  width: 100%;
+  overflow: hidden;
+  height: 80vh;
+
+}
+.banner-col{
+  cursor: pointer;
+  width: 20%;
+  position: relative;
+height: 0;
+transition: all ease 0.5s;
+color: #fff;
+z-index: 5;
+}
+/* .po-text{
+  position: absolute;
+  bottom: 80px;
+  right: 50px;
+} */
+.banner-col h1{
+  font-family: 'Hanken Grotesk', sans-serif;
+  letter-spacing: 2px;
+  font-weight: 400;
+  color: #fff !important;
+  font-size: 28px;
+  line-height: 20px;
+}
+.banner-col p{
+  line-height: 30px;
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 16px;
+  display: block;
+  color: #fff !important;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+transition: all ease 0.5s;
+}
+.fov-center{
+  text-align: center;
+ 
+ margin-top: 80px;
+ margin-bottom: 40px;
+}
+.fov-center h1{
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 50px;
+  color: #161616;
+  margin-bottom: 17px;
+}
+.fov-center p{
+  font-family: "Hanken Grotesk", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 33px;
+  /* identical to box height */
+max-width: 800px;
+margin: 0 auto;
+  color: #161616;
+}
+.active-baner p{
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 80px;
+  margin-top: 20px;
+}
+.active-baner-1 p{
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 80px;
+  margin-top: 20px;
+}
+.active-baner-1 p{
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 80px;
+  margin-top: 20px;
+}
+.active-baner-2 p{
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 80px;
+  margin-top: 20px;
+}
+.active-baner-3 p{
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 80px;
+  margin-top: 20px;
+}
+.active-baner-4 p{
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 80px;
+  margin-top: 20px;
+}
+.ban-text{
+  position: absolute;
+  z-index: 10;
+bottom: 0;
+  right:0;
+  margin: 40px 0;
+  color: #fff !important;
+  padding: 0 30px;
+}
+/* .ban-text h1{
+  position: absolute;
+bottom: 0px;
+right: 20px;
+
+} */
+.active-baner{
+  background: linear-gradient(to top, #995967, transparent);
+  height: 100%;
+  width: 20%;
+object-fit: cover;
+object-position: center;
+  transition: all 1s ease-in-out;
+  z-index: 5;
+
+}
+.active-baner-1{
+
+  background: linear-gradient(to top, #a05031, transparent);
+  height: 100%;
+  width: 20%;
+object-fit: cover;
+object-position: center;
+  transition: all 1s ease-in-out;
+  z-index: 5;
+}
+
+.active-baner-2{
+  background: linear-gradient(to top, #3a5041, transparent);
+  height: 100%;
+  width: 20%;
+object-fit: cover;
+object-position: center;
+  transition: all 1s ease-in-out;
+  z-index: 5;
+}
+.active-baner-3{
+  background: linear-gradient(to top, #292a39, transparent);
+  height: 100%;
+  width: 20%;
+object-fit: cover;
+object-position: center;
+  transition: all 1s ease-in-out;
+  z-index: 5;
+}
+.active-baner-4{
+  background: linear-gradient(to top, #393131, transparent);
+  height: 100%;
+  width: 20%;
+object-fit: cover;
+object-position: center;
+  transition: all 1s ease-in-out;
+  z-index: 5;
+}
+.baner-img{
+  width: 100%;
+  height: 100%;
+  display: none;
+  object-fit: cover;
+  transition: all 1s ease-in;
+}
+
+.baner-text{
+  position: absolute;
+  bottom: 0px;
+  left:0;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+text-align: center;
+  width: 100%;
+  height: 100%;
+
+
+}
+.baner-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+
+
+}
+.active-img {
+  display: block;
+  width: 100%;
+transition: all 1s ease-in;
+  object-fit: cover !important;
+  height: 100%;
+
+}
+.baner-img::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #09080837;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.daire-text{
+  position: absolute;
+  bottom:-1%;
+  right:38.5%;
+  z-index: 40;
+  font-size: 30px;
+  font-family: 'Hanken Grotesk', sans-serif;
+  color: #3a5041;
+}
+.daire-text h1{
+  text-shadow: 2px 2px 6px rgba(255,255,255,0.93) !important;
+ letter-spacing: 10px;
+}
+
+.active-img img{
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  /* object-position: center; */
+}
+.favorite{
+  
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  gap: 30px;
+
+
+}
+.fov-sec{
+
+margin-bottom: 80px;
+  overflow: hidden;
+}
+.fovorite-img img{
+  width: 100%;
+}
+.fovorite-img {
+  position: relative;
+  width: 100%;
+  
+}
+.favorit-box{
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+transition: 1s;
+border-radius: 10px;
+overflow: hidden;
+gap: 20px;
+}
+.favorit-box:hover{
+  box-shadow: -1px 3px 32px -4px rgba(183,175,175,0.53);
+  -webkit-box-shadow: -1px 3px 32px -4px rgba(183,175,175,0.53);
+  -moz-box-shadow: -1px 3px 32px -4px rgba(183,175,175,0.53);
+}
+.fovorite-img span{
+position: absolute;
+top: 5px;
+right: 5px;
+width: 30px;
+height: 30px;
+display: flex;
+font-size: 20px;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+background-color: #fff;
+color: #3a5041;
+border: 1px solid #3a5041;
+}
+.favorite-text{
+  padding: 0 10px;
+  width: 100%;
+  
+}
+.favorite-text h1{
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 200px;
+  color:#3c423e;
+  line-height: 35px;
+  letter-spacing: 2px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.fov-titl{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.fov-titl p{
+  font-size: 20px;
+  font-family: 'Outfit', sans-serif; 
+  color: #5d5b5b;
+  font-weight: 300;
+}
+.fovorite-btn{
+  width: 90px;
+  height: 40px;
+  border-radius: 60px;
+  border: none;
+  font-size: 20px;
+  background-color: #3a5041;
+  color: #fff;
+  transition: 0.8s ease-in-out;
+  cursor: pointer;
+}
+.fovorite-btn.selected {
+  background-color: red;
+}
+
+@media screen and (max-width: 1291px) {
+  .banner-col p{
+    font-size: 16px;
+    line-height: 25px !important;
+  }
+}
+
+@media screen and (max-width: 1053px) {
+  .banner-col p{
+    font-size: 14px;
+    line-height: 22px !important;
+  }
+  .banner-col h1{
+    font-size: 22px;
+    line-height: 5px;
+  }
+  .ban-text{
+    padding: 0 10px;
+  }
+  .favorite{
+  
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    gap: 30px;
+    margin: 40px 0;
+  }
+}
+@media screen and (max-width: 833px) {
+  .banner-col p{
+    font-size: 12px;
+    line-height: 18px !important;
+  }
+  .ban-text{
+    padding: 0 10px;
+  }
+  .banner-col h1{
+    font-size: 18px;
+    line-height: 5px;
+  }
+}
+@media screen and (max-width: 763px){
+  .favorite{
+  
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 30px;
+    margin: 40px 0;
+  }
+}
+@media screen and (max-width: 603px) {
+  .banner-col p{
+    font-size: 10px;
+    line-height: 16px !important;
+
+  }
+  .fov-center h1{
+    font-size: 40px;
+line-height: 30px;
+  }
+  .fov-center p{
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .ban-text{
+    margin:20px 0 ;
+  }
+  .banner-col h1{
+    font-size: 16px;
+    line-height: 5px;
+  }
+  .banner-images{
+    width: 100%;
+    overflow: hidden;
+    height: 70vh;
+  }
+  .active-baner p{
+    visibility: visible;
+    opacity: 1;
+    margin-bottom: 60px;
+    margin-top: 20px;
+  }
+  .active-baner-1 p{
+    visibility: visible;
+    opacity: 1;
+    margin-bottom: 60px;
+    margin-top: 20px;
+  }
+  .active-baner-1 p{
+    visibility: visible;
+    opacity: 1;
+    margin-bottom: 60px;
+    margin-top: 20px;
+  }
+  .active-baner-2 p{
+    visibility: visible;
+    opacity: 1;
+    margin-bottom: 60px;
+    margin-top: 20px;
+  }
+  .active-baner-3 p{
+    visibility: visible;
+    opacity: 1;
+    margin-bottom: 60px;
+    margin-top: 20px;
+  }
+  .active-baner-4 p{
+    visibility: visible;
+    opacity: 1;
+    margin-bottom: 60px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .banner-col p{
+    font-size: 8px;
+    line-height: 12px !important;
+
+  }
+  .favorite{
+  
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    align-items: center;
+    gap: 30px;
+    margin: 40px 0;
+  }
+  .ban-text{
+    margin:20px 0 ;
+  }
+  .banner-col h1{
+    font-size: 14px;
+    line-height: 0px;
+  }
+  .banner-images{
+    width: 100%;
+    overflow: hidden;
+    height: 65vh;
+  }
+  .fov-center h1{
+    font-size: 36px;
+line-height: 30px;
+  }
+}
+@media screen and (max-width: 465px) {
+  .banner-col p{
+    font-size: 8px;
+    line-height: 12px !important;
+
+  }
+  .ban-text{
+    margin:20px 0 ;
+  }
+  .banner-col h1{
+    font-size: 10px;
+    line-height: 0px;
+  }
+  .banner-images{
+    width: 100%;
+    overflow: hidden;
+    height: 55vh;
+  }
+}
+@media screen and (max-width: 395px) {
+  .banner-col p{
+    font-size: 6px;
+    line-height: 8px !important;
+
+  }
+  .ban-text{
+    margin:20px 0 ;
+  }
+  .banner-col h1{
+    font-size: 8px;
+    line-height: 0px;
+  }
+  .banner-images{
+    width: 100%;
+    overflow: hidden;
+    height: 50vh;
+  }
+.active-baner p{
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+.active-baner-1 p{
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+.active-baner-1 p{
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+.active-baner-2 p{
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+.active-baner-3 p{
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+.active-baner-4 p{
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+}

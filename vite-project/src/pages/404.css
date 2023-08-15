@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.error-backround {
+  position: relative;
+  background-image: url(https://images.unsplash.com/photo-1634712282287-14ed57b9cc89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1206&q=80);
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: right;
+  z-index: 3;
+}
+
+.error-right-text {
+  position: relative;
+width: 50%;
+  display: flex;
+  align-items: center;
+}
+/* .error-right-text::before {
+  content: "";
+  width: 700px;
+  margin-left: 110px;
+  margin-bottom: 20px;
+  height: 580px;
+  position: absolute;
+  background-color: rgb(38, 51, 51);
+  opacity: 0.2;
+  z-index: -1;
+} */
+.error-text{
+  background-color: rgba(38, 51, 51, 0.222);
+  padding: 69px 0px;
+  width:650px;
+
+}
+.error-text h1 {
+  animation: bounce-in 1.2s ease-in-out forwards alternate;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  font-size: 180px;
+  color: white;
+}
+.error-text h2 {
+  animation: texth4 1.2s ease-in-out forwards alternate;
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.error-h4 {
+  animation: texth4 1.4s ease-in-out forwards alternate;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.error-text h4 {
+  width: 60%;
+  line-height: 30px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  margin-top: 30px;
+}
+.error-btn {
+  animation: butonn 1.4s ease-in-out forwards alternate;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.error-text button {
+  border: none;
+  font-size: 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  color: aliceblue;
+  background-color: rgb(119, 146, 175);
+}
+@keyframes bounce-in {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-100%);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  90% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes texth4 {
+  0% {
+    transform: translateY(-300%);
+    opacity: 0;
+    transition: 1.5;
+  }
+  60% {
+    transform: translateY(25px);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  90% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes butonn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: 1.5;
+  }
+  60% {
+    transform: translateY(25px);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  90% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .error-right-text {
+    width: 100%;
+  }
+  .error-text h1 {
+    font-size: 100px;
+  }
+  .error-text h2 {
+    font-size: 40px;
+  }
+  .error-text h4 {
+    width: 80%;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .error-text button {
+    width: 150px;
+    height: 40px;
+    font-size: 14px;
+  }
+}
+
+/* Tablet styles */
+
+@media (max-width: 767px) {
+  .error-right-text {
+    width: 100%;
+  }
+  .error-text h1 {
+    font-size: 100px;
+  }
+  .error-text h2 {
+    font-size: 40px;
+  }
+  .error-text h4 {
+    width: 80%;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .error-text button {
+    width: 150px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .error-right-text::before {
+    display: none;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .error-right-text {
+    width: 80%;
+  }
+  .error-text h1 {
+    font-size: 140px;
+  }
+  .error-text h2 {
+    font-size: 50px;
+  }
+  .error-text h4 {
+    width: 70%;
+    font-size: 18px;
+    margin-top: 25px;
+  }
+  .error-text button {
+    width: 180px;
+    height: 50px;
+    font-size: 16px;
+  }
+  .error-right-text::before {
+    display: none;
+  }
+}

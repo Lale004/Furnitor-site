@@ -1,0 +1,865 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200;300;400&family=Outfit:wght@300;400;500&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  /* border: 1px solid red; */
+  text-decoration: none;
+ /* font-family: 'Hanken Grotesk', sans-serif;
+font-family: 'Outfit', sans-serif; */
+
+}
+/* .container{
+  margin: 0 auto;
+  width: 1140px;
+  max-width: 95%;
+} */
+h3{
+  font-family: 'Hanken Grotesk', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 33px;
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Secondary */
+
+color: #333333;
+
+}
+h1{
+  font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 50px;
+line-height: 80px;
+/* identical to box height */
+
+
+color: #000000;
+
+}
+.form-section{
+  position: relative;
+  margin-bottom: 80px;
+}
+.contact-img{
+  position: relative;
+  background:#3a5041;
+ 
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  gap:60px ;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 100px ;
+}
+.contact-anime-img{
+width: 45%;
+height: 500px;
+position: relative;
+background: radial-gradient(520px, #f08f538c, transparent 50%);
+margin-top: -50px;
+}
+.emil-ico{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.anime-icons{
+  height: 100%;
+  animation: rotation 60s linear infinite;
+}
+@keyframes rotation {
+  100% {
+    transform:  rotate(360deg);
+  }
+}
+.wave{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width:100%;
+  height:55%;
+  line-height: 0;
+}
+/* .wave::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./images/contact/wave.svg) repeat-x;
+  background-size: cover;
+  background-position: -1000px 0;
+  opacity: .2;
+  animation: waveOne 60s linear infinite;
+} */
+
+@keyframes waveOne{
+  50% {
+    background-color: 0 0;
+  }
+}
+.anime-icons span{
+  position: absolute;
+  background-color: #3a5041;
+  border:2px solid rgba(240, 144, 83, 1);
+width: 60px;
+height: 60px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color:  rgba(240, 144, 83, 1);
+font-size: 30px;
+transition: 0.6s;
+}
+.media-text{
+  color: #19db93;
+  text-shadow: 2px 2px 5px rgba(121,233,191,0.52);
+}
+.anime-icons span:hover{
+  background-color:#19db93;
+  color: #fff;
+  border: 3px solid #19db93;
+  box-shadow: 2px 1px 83px -9px rgba(25,219,147,0.83);
+-webkit-box-shadow: 2px 1px 83px -9px rgba(25,219,147,0.83);
+-moz-box-shadow: 2px 1px 83px -9px rgba(25,219,147,0.83);
+}
+.anime-icons span:nth-child(1){
+top: 0;
+left: 40%;
+}
+/* .emil-ico:hover span{
+  background-color:#19db93;
+  color: #fff;
+  border: 3px solid #19db93;
+  box-shadow: 2px 1px 83px -9px rgba(25,219,147,0.83);
+-webkit-box-shadow: 2px 1px 83px -9px rgba(25,219,147,0.83);
+-moz-box-shadow: 2px 1px 83px -9px rgba(25,219,147,0.83);
+} */
+.anime-icons span:nth-child(2){
+  top: 25%;
+  right: 10%;
+}
+.anime-icons span:nth-child(3){
+  top: 80%;
+  left: 70%;
+}
+.anime-icons span:nth-child(4){
+  top: 28%;
+  left: 8%;
+}
+.anime-icons span:nth-child(5){
+  top: 80%;
+  left: 20%;
+}
+.contact-anime-text{
+  width: 50%;
+  padding-right: 100px;
+ 
+}
+.contact-anime-text p{
+  font-size: 26px;
+  line-height: 46px;
+  font-family: 'Hanken Grotesk', sans-serif;
+  color: #fff;
+  margin-top: 20px;
+}
+.contact-anime-text h1{
+ color: #fff;
+ font-size: 50px;
+ font-family: 'Outfit', sans-serif;
+}
+.center-text{
+  text-align: center;
+margin-top: 60;
+margin-bottom: 10px;
+}
+.contactt{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+margin-top: 60px;
+margin-bottom: 120px;
+}
+.contact-col{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.contact-col span{
+  width: 70px;
+  height: 70px;
+  font-size: 25px;
+  border-radius: 50%;
+  background: #A2BEAA;
+  color: #fff;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.8s;
+}
+.sucses-icon{
+  font-size: 100px;
+ color: #109b68;
+ position: absolute;
+ top: -50px;
+ z-index: 10;
+}
+.box__text{
+  font-family: 'Outfit';
+  font-size: 30px;
+
+}
+.seccess_box,
+.overlay-contact {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 10;
+}
+.overlay-contact{
+  background-color: #3a504149;
+}
+.contact-modal-btn{
+  width: 100%;
+  background-color: #0e6747;
+  border: none;
+  font-size: 30px;
+  color: #fff;
+  padding: 16px 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.suc-box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #ffffff;
+  padding: 4px;
+  border-radius: 3px;
+  width: 350px;
+  z-index: 15;
+  height: 350px;
+  display: flex;
+  align-items: center;
+justify-content: center;
+  flex-direction: column;
+
+  box-shadow: 0px 2px 18px 0px rgba(239, 229, 229, 0.75);
+  -webkit-box-shadow: 0px 2px 18px 0px rgba(239, 229, 229, 0.75);
+  -moz-box-shadow: 0px 2px 18px 0px rgba(239, 229, 229, 0.75);
+
+  object-position: bottom;
+}
+
+.contact-col span img{
+  width: 20px;
+}
+.contact-col:hover span{
+  background-color: #3a5041;
+}
+.contact-col h3{
+  font-family: 'Outfit';
+font-style: normal;
+font-weight: 300;
+font-size: 20px;
+line-height: 28px;
+/* identical to box height */
+
+letter-spacing: 0.265em;
+text-transform: uppercase;
+
+/* Black/Black-30 */
+
+color: #77808B;
+
+}
+p{
+  font-family: 'Hanken Grotesk', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 43px;
+/* identical to box height, or 172% */
+
+;
+
+color: #000000;
+
+}
+.contact-col p{
+  color: #283646;
+}
+.form-col{
+  display: flex;
+  gap: 80px;
+
+}
+.form-col1{
+  width: 48%;
+  margin: 20px 0;
+ }
+
+form input, textarea{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+padding: 14px ;
+margin: 10px auto;
+border-radius: 3px;
+border: 1.39691px solid #B5B5B5;
+color: #2f2f2f;
+font-size:16px;
+outline: #A2BEAA;
+resize: none;
+font-family: 'Hanken Grotesk', sans-serif;
+
+}
+
+
+.contactBtn{
+  border: none;
+  padding: 18px 45px;
+background: #B58269;
+margin: 40px auto;
+display: flex;
+min-width: 35%;
+align-items: center;
+font-family: 'Outfit';
+display: flex;
+align-items: center;
+justify-content: center;
+font-style: normal;
+font-weight: 300;
+font-size: 20px;
+line-height: 28px;
+/* identical to box height */
+box-shadow: 1px 0px 62px -18px rgba(181,130,105,0.74);
+-webkit-box-shadow: 1px 0px 62px -18px rgba(181,130,105,0.74);
+-moz-box-shadow: 1px 0px 62px -18px rgba(181,130,105,0.74);
+  transition: 0.6s;
+letter-spacing: 0.265em;
+text-transform: uppercase;
+
+color: #FFFFFF;
+
+}
+.contactBtn:hover{
+  background-color: #9c6e57;
+  box-shadow: 1px 0px 62px -18px rgba(137,94,71,0.74);
+-webkit-box-shadow: 1px 0px 62px -18px rgba(137,94,71,0.74);
+-moz-box-shadow: 1px 0px 62px -18px rgba(137,94,71,0.74);
+}
+label{
+  font-family: 'Hanken Grotesk', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+color: #212121;
+
+}
+
+.map iframe {
+  width: 100%;
+}
+
+
+@media screen and (max-width:1330px){
+
+  .contact-anime-text {
+    width: 50%;
+    padding-right: 10px;
+}
+.anime-icons span:nth-child(1){
+  top: 0;
+  left: 40%;
+  }
+  .anime-icons span:nth-child(2){
+    top: 25%;
+    right: 10%;
+  }
+  .anime-icons span:nth-child(3){
+    top: 80%;
+    left: 70%;
+  }
+  .anime-icons span:nth-child(4){
+    top: 28%;
+    left: 8%;
+  }
+  .anime-icons span:nth-child(5){
+    top: 80%;
+    left: 20%;
+  }
+.contact-anime-text h1{
+  font-size: 34px;
+  width: 80%;
+}
+.contact-anime-img {
+  background: radial-gradient(420px, #f08f538c, transparent 50%);
+}
+.contact-anime-text p{
+  font-size: 22px;
+  width: 70%;
+}
+}
+@media screen and (max-width:1230px){
+  .anime-icons span:nth-child(1){
+    top: 6%;
+    left: 45%;
+    }
+    .contact-anime-img{
+height: 470px;
+    }
+    .anime-icons span:nth-child(2){
+      top: 35%;
+      right: 3%;
+    }
+    .anime-icons span:nth-child(3){
+      top: 80%;
+      left: 65%;
+    }
+    .anime-icons span:nth-child(4){
+      top: 38%;
+      left: 2%;
+    }
+    .anime-icons span:nth-child(5){
+      top: 80%;
+      left: 20%;
+    }
+    .emil-ico{
+      width: 150px;
+    }
+}
+@media screen and (max-width:1150px){
+.contact-anime-text p {
+  font-size: 22px;
+  width: 90%;
+  font-size: 20px;
+}
+.contact-anime-img{
+  height: 400px;
+}
+.contact-anime-text h1{
+  font-size: 30px;
+}
+.anime-icons span:nth-child(1){
+  top: 10%;
+  left: 40%;
+  }
+  .anime-icons span:nth-child(2){
+    top:40%;
+    right: 4%;
+  }
+  .anime-icons span:nth-child(3){
+    top: 75%;
+    left: 65%;
+  }
+  .anime-icons span:nth-child(4){
+    top: 40%;
+    left: 2%;
+  }
+  .anime-icons span:nth-child(5){
+    top: 70%;
+    left: 20%;
+  }
+.wave{
+  height: 40%;
+}
+.contact-anime-img {
+  background: radial-gradient(350px, #f08f538c, transparent 50%);
+}
+}
+@media screen and (max-width:1000px){
+/* .contactt{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: 40px;
+} */
+.anime-icons span:nth-child(1){
+  top: 10%;
+  left: 40%;
+  }
+  .anime-icons span:nth-child(2){
+    top:35%;
+    right: 2%;
+  }
+  .anime-icons span:nth-child(3){
+    top: 75%;
+    left: 65%;
+  }
+  .anime-icons span:nth-child(4){
+    top: 40%;
+    left: 2%;
+  }
+  .anime-icons span:nth-child(5){
+    top: 75%;
+    left: 20%;
+  }
+.contact-col span{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #A2BEAA;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-about h3{
+  font-size: 18px;
+}
+.contact-about p{
+  font-size: 16px;
+}
+.emil-ico{
+  width: 120px;
+}
+}
+@media screen and (max-width:840px){
+.contact-col {
+  gap: 15px;
+}
+.contact-anime-img{
+  height: 350px;
+      }
+.contact-about h3{
+  font-size: 16px;
+}
+.contact-anime-text h1{
+  font-size: 22px;
+line-height: 45px;
+  width: 90%;
+}
+.anime-icons span:nth-child(1){
+  top: 15%;
+  left: 40%;
+  }
+  .anime-icons span:nth-child(2){
+    top: 30%;
+    right: 1%;
+  }
+  .anime-icons span:nth-child(3){
+    top: 65%;
+    left: 20%;
+  }
+  .anime-icons span:nth-child(4){
+    top: 30%;
+    left: 1%;
+  }
+  .anime-icons span:nth-child(5){
+    top: 60%;
+    left: 70%;
+  }
+.emil-ico{
+  width: 100px;
+}
+.contact-anime-text p{
+  font-size: 16px;
+  line-height: 30px;
+}
+.contact-col span{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #A2BEAA;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+}
+@media screen and (max-width:730px){
+  .contactt{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  .contact-col{
+    width: 45%;
+  }
+  .wave{
+    display: none;
+  }
+  .contact-anime-text{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .contact-anime-img{
+    height: 300px;
+        }
+  .anime-icons span:nth-child(1){
+    top: 1%;
+    left: 40%;
+    }
+    .anime-icons span:nth-child(2){
+      top:25%;
+      right: 25%;
+    }
+    .anime-icons span:nth-child(3){
+      top: 70%;
+      left: 60%;
+    }
+    .anime-icons span:nth-child(4){
+      top: 30%;
+      left: 20%;
+    }
+    .anime-icons span:nth-child(5){
+      top:75%;
+      left: 30%;
+    }
+  .contact-img{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 20px;
+  }
+
+  .contact-anime-img{
+    width: 80%;
+  }
+  .contact-anime-text h1{
+    font-size: 40px;
+    line-height: 80px;
+  }
+  .contact-anime-text p{
+    font-size: 24px;
+  }
+}
+@media screen and (max-width:670px){
+  .form-col{
+    gap: 40px;
+  }
+  .contact-anime-text h1{
+    font-size: 34px;
+    line-height: 70px;
+  }
+  .contact-anime-text p{
+    font-size: 20px;
+  }
+  .contact-anime-text{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .contact-img{
+    padding: 20px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (max-width:570px){
+  .contact-about h3{
+    font-size: 14px;
+  }
+  .contact-about p{
+    font-size: 14px;
+  }
+  .contact-anime-text h1{
+    font-size: 30px;
+    line-height: 60px;
+  }
+  .contact-anime-text p{
+    font-size: 18px;
+  }
+  .contact-anime-text{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+ 
+  .contact-anime-img {
+    background: radial-gradient(320px, #f08f538c, transparent 50%);
+}
+  .contact-img{
+    padding: 20px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .anime-icons span:nth-child(1){
+    top: 1%;
+    left: 45%;
+    }
+    .anime-icons span:nth-child(2){
+      top:30%;
+      right: 10%;
+    }
+    .anime-icons span:nth-child(3){
+      top: 70%;
+      left: 65%;
+    }
+    .anime-icons span:nth-child(4){
+      top: 30%;
+      left: 20%;
+    }
+    .anime-icons span:nth-child(5){
+      top:75%;
+      left: 30%;
+    }
+}
+@media screen and (max-width:510px){
+  .contactt{
+    display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+  }
+  .form-col{
+    flex-direction: column;
+    gap: 10px;
+
+  }
+.contact-form {
+    width: 80%;
+    margin: 0 auto;
+ 
+  }
+  .form-col1{
+    width: 100%;
+    margin: 0 auto;
+  }
+ 
+  .contact-col{
+    margin: 0 auto;
+    width: 70%;
+   justify-content: left;
+margin: 0 auto;
+    display: flex;
+
+  }
+  .contact-col span{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #A2BEAA;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-about h3{
+    font-size: 22px;
+
+  }
+  .contact-about p{
+    font-size: 20px;
+  }
+  .anime-icons span:nth-child(1){
+    top: 1%;
+    left: 45%;
+    }
+    .anime-icons span:nth-child(2){
+      top:30%;
+      right: 10%;
+    }
+    .anime-icons span:nth-child(3){
+      top: 70%;
+      left: 65%;
+    }
+    .anime-icons span:nth-child(4){
+      top: 30%;
+      left: 10%;
+    }
+    .anime-icons span:nth-child(5){
+      top:75%;
+      left: 30%;
+    }
+}
+@media screen and (max-width:490px){
+  .contact-about h3{
+    font-size: 18px;
+
+  }
+  .contact-about p{
+    font-size: 18px;
+  }
+}
+@media screen and (max-width:420px){
+  .contact-about h3{
+    font-size: 16px;
+
+  }
+  .contact-about p{
+    font-size: 16px;
+  }
+  .contact-anime-img{
+    background: radial-gradient(250px, #f08f538c, transparent 50%)
+  }
+  .contact-col span{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #A2BEAA;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contactBtn{
+    font-size: 16px;
+  }
+  .anime-icons span:nth-child(1){
+    top: 4%;
+    left: 45%;
+    }
+    .anime-icons span:nth-child(2){
+      top:35%;
+      right: 1%;
+    }
+    .anime-icons span:nth-child(3){
+      top: 70%;
+      left: 65%;
+    }
+    .anime-icons span:nth-child(4){
+      top: 30%;
+      left: 2%;
+    }
+    .anime-icons span:nth-child(5){
+      top:70%;
+      left: 15%;
+    }
+}
+@media screen and (max-width:360px){
+  .contact-col{
+    margin: 0 auto;
+    width: 80%;
+   justify-content: left;
+margin: 0 auto;
+    display: flex;
+
+  }
+}
