@@ -14,7 +14,12 @@ class Blog(models.Model):
     created_date = models.CharField(max_length=40)
     image = models.URLField()
     # description = models.CharField(max_length=15)
-
+    author=models.CharField(max_length=20, blank=True,null=True)
+    description=models.CharField(max_length=10000, blank=True,null=True)
+    question1=models.CharField(max_length=1000, blank=True,null=True)
+    answer1=models.CharField(max_length=1000, blank=True,null=True)
+    question2=models.CharField(max_length=1000, blank=True,null=True)
+    answer2=models.CharField(max_length=1000, blank=True,null=True)
 
     def __str__(self):
         return self.title

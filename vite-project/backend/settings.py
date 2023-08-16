@@ -15,8 +15,6 @@ SECRET_KEY = 'django-insecure-^@vb9-8!wpio0^*bd$b@p%8ogv%y2zu*8qz3bre68mvoauvk2t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -55,9 +53,6 @@ REST_FRAMEWORK = {
     ],
 }
 
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = [
     "DELETE",
     "GET",
@@ -171,3 +166,10 @@ INTERNAL_IPS=[
     '127.0.0.1',
 
 ]
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+DEFAULT_FROM_EMAIL='mYAPP'
+EMAIL_HOST_USER='asoiu693.21@gmail.com'
+EMAIL_HOST_PASSWORD='srguffcqwudvcris'

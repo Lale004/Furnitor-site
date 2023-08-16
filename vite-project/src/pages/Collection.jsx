@@ -10,11 +10,13 @@ import { SlClose } from "react-icons/sl";
 import ScrollToTop from "react-scroll-to-top";
 import { AiOutlineSearch } from "react-icons/ai";
 import { Link } from "react-router-dom";
-
+import { useSelector, useDispatch } from 'react-redux';
 import { TbHeartFilled, TbHeart } from "react-icons/tb";
 
 
-function Collection({favorites, dispatch}) {
+function Collection() {
+  const favorites = useSelector(state => state.favorites);
+  const dispatch = useDispatch();
  const [datas, setDatas] = useState([]);
   useEffect(() => {
     fetch("http://127.0.0.1:8000/list/")

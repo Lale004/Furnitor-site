@@ -28,6 +28,7 @@ urlpatterns = [
     path("blogs/", blog_list_view, name="blog"),
       path('',include('shop.urls')),
     path("<int:pk>/blogs/", blog_list_view, name="blog_id"),
+    path('contact/', contact_view, name='contact'),
     path('api/reviews/', UserReviewView.as_view(), name='user-review-view'),
     re_path(r'^(?P<path>.*)/$', TemplateView.as_view(template_name='base.html')),
     

@@ -21,14 +21,16 @@ function Blog() {
         });
     }, []);
 
+
+
   return (
     <main>
 
       <section className='mainsec__header'>
         <div className="container">
           <div className='whitebox__sec'>
-            <h1>Məqalə</h1>
-            <p>Mebel/Dizayn</p>
+            <h1>Article</h1>
+            <p>Furniture/Design</p>
           </div>
         </div>
       </section>
@@ -83,16 +85,16 @@ function Blog() {
           <SwiperSlide>
             <div className="bigswiper__sec">
               <div className="swiperimage__sec">
-                <img src="images/Blog/collection1.png" alt="" />
+                <img src="https://johnlewis.scene7.com/is/image/JohnLewis/furnitureandlight-livingroom-carousel-gb-010323" alt="" />
               </div>
               <div className="swipertext__sec">
                 {/* <div className="swipertext_h1">
                   <h1>Yataq otağı dəstləri</h1>
                 </div> */}
              
-                <p>Siz dünyanın hər yerində ola bilərsiniz, ancaq sizin üçün tamamilə fərdi olan və tamamilə öz üslubunuzda olmaq istədiyiniz tək yer yataq otağınızdır. Yataq otaqları müxtəlif üslubda ola bilər və üslub da yataq otağınızı necə dizayn edəcəyinizi müəyyən edən yerin iqlim şəraitindən asılıdır.</p>
-                <button>Davamı</button>
-                <p>"Əsl vizual və fiziki rahatlıq hər otaq üçün vacibdir"</p>
+                <p>You may be anywhere in the world, but the only place that is completely personal to you and where you want to be completely your own is your bedroom. Bedrooms can be of different styles and the style also depends on the climate of the place which determines how to design your bedroom.</p>
+                <button>Continue</button>
+                <p>"True visual and physical comfort is essential for every room"</p>
                 <h4>Mark Hampton</h4>
               </div>
             </div>
@@ -103,13 +105,13 @@ function Blog() {
               {/* <div className="swipertext_2">
                 <h3>Qonaq otağı dəstləri</h3>
                 </div> */}
-                <p>Qonaq otağı aksessuarlarının seçilməsinin açarı onların hamısının bir-biri ilə uyğunlaşmasının lazım olduğunu başa düşməkdir. Onları tək-tək seçə bilməzsiniz.Onları kolleksiya kimi düşünün.</p>
-                <button>Davamı</button>
-                <p>"Ev Gesamtkunstwerk kimi olmalıdır. Hər şey bir-biri ilə uyğunlaşmalıdır və düşünülmüş olmalıdır”.</p>
+                <p>The key to choosing living room accessories is to understand that they all need to coordinate with each other. You can't pick them individually. Think of them as a collection.</p>
+                <button>Continue</button>
+                <p>"A house should be like a Gesamtkunstwerk. Everything should fit together and be thought out."</p>
                 <h4>Alyssa Kapito</h4>
               </div>
               <div className="swiperimage__sec">
-                <img src="images/Blog/collection3.png" alt="" />
+                <img src="https://www.universalfurniture.com/images/pages/home/2022/U030501_RM.jpg?v=fcYu7oTsSUAyVfxWs5MbR2L0Jpeg0JzIiZ4Eaa_BqPw" alt="" />
               </div>
 
             </div>
@@ -117,16 +119,16 @@ function Blog() {
           <SwiperSlide>
             <div className="bigswiper__sec">
               <div className="swiperimage__sec">
-                <img src="images/Blog/bc2.jpeg" alt="" />
+                <img src="https://ak1.ostkcdn.com/img/mxc/08142023-SPCOOP-Desktop_Furniture_iNSPIREQ.png?imwidth=680" alt="" />
               </div>
               <div className="swipertext__sec">
                 {/* <div className="swper_3">
                 <h1>Yumşaq dəstlər</h1>
                 </div> */}
                 
-                <p>Yumşaq dəst almaq, eviniz üçün edə biləcəyiniz ən vacib investisiyalardan biridir. Qonaq otağında bu, istirahət etmək, oxumaq, yemək, əylənmək, televizora baxmaq və hətta yatmaq üçün bir parçadır, buna görə də gələcək illər üçün davam edəcək birinə sərmayə qoymağımızın mənası var.</p>
-                <button>Davamı</button>
-                <p>"Divanınız istirahət məkanınızı müəyyən edəcək böyük bir parçadır"</p>
+                <p>YBuying a nursery is one of the most important investments you can make for your home. In the living room, it's a piece for lounging, reading, eating, entertaining, watching TV, and even sleeping, so it makes sense that we invest in one that will last for years to come.</p>
+                <button>Continue</button>
+                <p>"Your sofa is a big piece that will define your relaxation space"</p>
                 <h4>Brittney Morgan</h4>
               </div>
             </div>

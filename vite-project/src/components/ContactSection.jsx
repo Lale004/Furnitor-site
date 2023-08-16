@@ -2,11 +2,11 @@ import React, { useReducer, useEffect,useState  } from 'react';
 import { AiFillCheckCircle } from "react-icons/ai";
 
 function ContactSection() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState([{
     name: '',
     email: '',
     message: ''
-  });
+  }]);
 
   const handleChange = (e) => {
     setFormData({
@@ -15,10 +15,14 @@ function ContactSection() {
     });
   };
   
+
+  
+
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
- 
-      const response = await fetch('contact/', {
+    try {
+      const response = await fetch('http://127.0.0.1:8000/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -27,8 +31,21 @@ function ContactSection() {
       });
 
       const data = await response.json();
-   
+      if (response.ok) {
+        // E-posta gönderimi başarılıysa
+        alert('Teşekkürler! İletişim bilgileriniz kaydedildi.');
+      } else {
+        // E-posta gönderimi başarısızsa
+        alert('Formu göndermek mümkün olmadı: ' + data.error);
+        console.log(data.error);
+      }
+    } catch (error) {
+      // E-posta gönderme işlemi sırasında bir hata oluştu
+      alert('Formu göndermek mümkün olmadı: ' + error.message);
+      console.log(error.message)
+    }
   };
+  
   
   
 
@@ -42,12 +59,12 @@ function ContactSection() {
                 <label>
                   Name
                   <input
-                     type="text"
-                     name="name"
-                     placeholder="Your Name"
-                     required
-                     value={formData.name}
-                     onChange={handleChange}
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
                   />
                 </label>
               </div>
