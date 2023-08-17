@@ -24,7 +24,7 @@ from contactblog.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='base.html')),
-    # path('api/',include('accounts.urls')),
+    path('api/',include('accounts.urls')),
     path("blogs/", blog_list_view, name="blog"),
       path('',include('shop.urls')),
     path("<int:pk>/blogs/", blog_list_view, name="blog_id"),

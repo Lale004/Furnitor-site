@@ -10,19 +10,18 @@ import { SlClose } from "react-icons/sl";
 import ScrollToTop from "react-scroll-to-top";
 import { AiOutlineSearch } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 import { TbHeartFilled, TbHeart } from "react-icons/tb";
 
-
 function Collection() {
-  const favorites = useSelector(state => state.favorites);
+  const favorites = useSelector((state) => state.favorites);
   const dispatch = useDispatch();
- const [datas, setDatas] = useState([]);
+  const [datas, setDatas] = useState([]);
   useEffect(() => {
     fetch("http://127.0.0.1:8000/list/")
       .then((response) => response.json())
       .then((data) => {
-       setDatas(data);
+        setDatas(data);
       });
   }, []);
   const addfavorites = (id, name) => {
@@ -46,10 +45,6 @@ function Collection() {
     );
   };
 
-
-  
-
-
   useEffect(() => {
     document.title = "Products";
   }, []);
@@ -69,13 +64,12 @@ function Collection() {
     "Chairs",
     "Closet",
   ];
-
   const [filters, setFilters] = useState({
     category: "",
     new_price: "",
     search: "",
-    lower: 100.00,
-    upper: 10000.00,
+    lower: 100.0,
+    upper: 10000.0,
   });
   const [showDiscounted, setShowDiscounted] = useState(true);
   let filteredProducts = datas
@@ -97,16 +91,14 @@ function Collection() {
       if (filters.name === "namedesc")
         return b.name.charCodeAt(0) - a.name.charCodeAt(0);
     })
-    .filter((p) => p.new_price >= filters.lower && p.new_price <= filters.upper).filter((product) => {
+    .filter((p) => p.new_price >= filters.lower && p.new_price <= filters.upper)
+    .filter((product) => {
       if (showDiscounted) {
-        return product.old_price > product.new_price; // Sadece indirimli ürünleri göster
+        return product.old_price > product.new_price;
       } else {
-        return product.old_price === null; // Sadece indirimsiz ürünleri göster
+        return product.old_price === null;
       }
     });
-
-
-
   const [activePage, setActivePage] = useState(1);
   const productPerPage = 9;
   const totalPageCount = Math.ceil(filteredProducts.length / productPerPage);
@@ -140,23 +132,24 @@ function Collection() {
     document.getElementById("6000-8000").checked = false;
     document.getElementById("8000-10000").checked = false;
     const discountedInput = document.getElementById("discounted-checkbox");
-  if (discountedInput.checked) {
-    discountedInput.checked = false;
-  }
-  const nonDiscountedInput = document.getElementById("non-discounted-checkbox");
-  if (nonDiscountedInput.checked) {
-    nonDiscountedInput.checked = false;
-  }
+    if (discountedInput.checked) {
+      discountedInput.checked = false;
+    }
+    const nonDiscountedInput = document.getElementById(
+      "non-discounted-checkbox"
+    );
+    if (nonDiscountedInput.checked) {
+      nonDiscountedInput.checked = false;
+    }
 
-  if (searchInputRef.current) {
-    searchInputRef.current.value = "";
-  }
+    if (searchInputRef.current) {
+      searchInputRef.current.value = "";
+    }
 
-  const checkboxes = document.getElementsByName("discount");
-  checkboxes.forEach((checkbox) => {
-    checkbox.checked = false;
-  });
-  
+    const checkboxes = document.getElementsByName("discount");
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = false;
+    });
   };
   // const RatingFilter = ({ selectedRating, onRatingSelect }) => {
   //   const ratings = [1, 2, 3, 4, 5];
@@ -179,7 +172,7 @@ function Collection() {
   //   );
   // };
   const handleButtonClick = (event) => {
-    event.stopPropagation(); 
+    event.stopPropagation();
     resetFilters();
   };
   const handleChange = (e) => {
@@ -199,19 +192,16 @@ function Collection() {
 
     setFilters(updatedFilters);
   };
-
   const applyFilter = () => {
-    const selectedPrice = document.querySelector('input[name="price"]:checked').id;
-    const [lower, upper] = selectedPrice.split('-').map(Number);
+    const selectedPrice = document.querySelector('input[name="price"]:checked')
+      .id;
+    const [lower, upper] = selectedPrice.split("-").map(Number);
     setFilters({
       ...filters,
       lower: lower,
       upper: upper,
     });
   };
-
-
-
   return (
     <>
       <div className="container">
@@ -312,39 +302,36 @@ function Collection() {
                           onChange={handleChange}
                         />
                       </div>
-                     
                     </div>
-                    
                   </div>
                 </fieldset>
               </div>
             </div>
             <div className="discount-filter">
-        <label htmlFor="discounted-checkbox">
-          <input
-            type="radio"
-            id="discounted-checkbox"
-            name="discount"
-            checked={showDiscounted}
-            onChange={() => setShowDiscounted(true)}
-          />
-          <span className="checkmark"></span>
-          Discounted
-        </label>
+              <label htmlFor="discounted-checkbox">
+                <input
+                  type="radio"
+                  id="discounted-checkbox"
+                  name="discount"
+                  checked={showDiscounted}
+                  onChange={() => setShowDiscounted(true)}
+                />
+                <span className="checkmark"></span>
+                Discounted
+              </label>
 
-        <label htmlFor="non-discounted-checkbox">
-          <input
-            type="radio"
-            id="non-discounted-checkbox"
-            name="discount"
-            checked={!showDiscounted}
-            onChange={() => setShowDiscounted(false)}
-          />
-          <span className="checkmark"></span>
-          Non-Discounted
-        </label>
-      </div>
-            
+              <label htmlFor="non-discounted-checkbox">
+                <input
+                  type="radio"
+                  id="non-discounted-checkbox"
+                  name="discount"
+                  checked={!showDiscounted}
+                  onChange={() => setShowDiscounted(false)}
+                />
+                <span className="checkmark"></span>
+                Non-Discounted
+              </label>
+            </div>
           </div>
 
           <div className="filter-panel">
@@ -418,77 +405,76 @@ function Collection() {
                           onChange={handleChange}
                         />
                       </div>
-                      
                     </div>
                     <div class="price-check-filter">
                       <div className="price-column-1">
-                      <label for="0-1000">
-                        <input
-                          type="radio"
-                          id="0-1000"
-                          name="price"
-                          onChange={applyFilter}
-                        />
-                        <span class="checkmark"></span>
-                        0-1000
-                      </label>
-                      <br />
-                      <label for="1000-2000">
-                        <input
-                          type="radio"
-                          id="1000-2000"
-                          name="price"
-                          onChange={applyFilter}
-                        />
-                        <span class="checkmark"></span>
-                        1000-2000
-                      </label>
-                      <br />
-                      <label for="2000-4000">
-                        <input
-                          type="radio"
-                          id="2000-4000"
-                          name="price"
-                          onChange={applyFilter}
-                        />
-                        <span class="checkmark"></span>
-                        2000-4000
-                      </label>
-                      <br />
+                        <label for="0-1000">
+                          <input
+                            type="radio"
+                            id="0-1000"
+                            name="price"
+                            onChange={applyFilter}
+                          />
+                          <span class="checkmark"></span>
+                          0-1000
+                        </label>
+                        <br />
+                        <label for="1000-2000">
+                          <input
+                            type="radio"
+                            id="1000-2000"
+                            name="price"
+                            onChange={applyFilter}
+                          />
+                          <span class="checkmark"></span>
+                          1000-2000
+                        </label>
+                        <br />
+                        <label for="2000-4000">
+                          <input
+                            type="radio"
+                            id="2000-4000"
+                            name="price"
+                            onChange={applyFilter}
+                          />
+                          <span class="checkmark"></span>
+                          2000-4000
+                        </label>
+                        <br />
                       </div>
                       <div className="price-column-2">
-                      <label for="4000-6000">
-                        <input
-                          type="radio"
-                          id="4000-6000"
-                          name="price"
-                          onChange={applyFilter}
-                        />
-                        <span class="checkmark"></span>
-                        4000-6000
-                      </label>
-                      <br />
-                      <label for="6000-8000">
-                        <input
-                          type="radio"
-                          id="6000-8000"
-                          name="price"
-                          onChange={applyFilter}
-                        />
-                        <span class="checkmark"></span>
-                        6000-8000
-                      </label>
-                      <br />
-                      <label for="8000-10000">
-                        <input
-                          type="radio"
-                          id="8000-10000"
-                          name="price"
-                          onChange={applyFilter}
-                        />
-                        <span class="checkmark"></span>
-                        8000-10000
-                      </label>
+                        <label for="4000-6000">
+                          <input
+                            type="radio"
+                            id="4000-6000"
+                            name="price"
+                            onChange={applyFilter}
+                          />
+                          <span class="checkmark"></span>
+                          4000-6000
+                        </label>
+                        <br />
+                        <label for="6000-8000">
+                          <input
+                            type="radio"
+                            id="6000-8000"
+                            name="price"
+                            onChange={applyFilter}
+                          />
+                          <span class="checkmark"></span>
+                          6000-8000
+                        </label>
+                        <br />
+                        <label for="8000-10000">
+                          <input
+                            type="radio"
+                            id="8000-10000"
+                            name="price"
+                            onChange={applyFilter}
+                          />
+                          <span class="checkmark"></span>
+                          8000-10000
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -502,33 +488,32 @@ function Collection() {
               />
             </div> */}
 
-<div className="discount-filter">
-        <label htmlFor="discounted-checkbox">
-          <input
-            type="radio"
-            id="discounted-checkbox"
-            name="discount"
-            checked={showDiscounted}
-            onChange={() => setShowDiscounted(true)}
-          />
-          <span className="checkmark"></span>
-          Discounted
-        </label>
+            <div className="discount-filter">
+              <label htmlFor="discounted-checkbox">
+                <input
+                  type="radio"
+                  id="discounted-checkbox"
+                  name="discount"
+                  checked={showDiscounted}
+                  onChange={() => setShowDiscounted(true)}
+                />
+                <span className="checkmark"></span>
+                Discounted
+              </label>
 
-        <label htmlFor="non-discounted-checkbox">
-          <input
-            type="radio"
-            id="non-discounted-checkbox"
-            name="discount"
-            checked={!showDiscounted}
-            onChange={() => setShowDiscounted(false)}
-            
-          />
-          <span className="checkmark"></span>
-          Non-Discounted
-        </label>
-      </div>
-            <button className="clear-filter"  onClick={handleButtonClick} >
+              <label htmlFor="non-discounted-checkbox">
+                <input
+                  type="radio"
+                  id="non-discounted-checkbox"
+                  name="discount"
+                  checked={!showDiscounted}
+                  onChange={() => setShowDiscounted(false)}
+                />
+                <span className="checkmark"></span>
+                Non-Discounted
+              </label>
+            </div>
+            <button className="clear-filter" onClick={handleButtonClick}>
               Clear filter
             </button>
           </div>
@@ -549,58 +534,63 @@ function Collection() {
               </select>
             </div>
             <div className="products">
-  {filteredProducts?.length > 0 ? (
-    filteredProducts.slice(start, end).map((product) => (
-      <div className="product" key={product.id}>
-        <div className="product-img">
-          <img src={product.image1} alt="" />
-          <div className="overlay">
-            <Link to={`/product/${product.id}`}>
-              <AiOutlineSearch style={{ marginTop: "15px" }} />
-            </Link>
-            <div className="heart_icon_products">
-              {favorites && favorites.some((fav) => fav.id === product.id) ? (
-                <TbHeartFilled
-                onClick={() => removefavorites(product?.id, product?.name)}
-                />
+              {filteredProducts?.length > 0 ? (
+                filteredProducts.slice(start, end).map((product) => (
+                  <div className="product" key={product.id}>
+                    <div className="product-img">
+                      <img src={product.image1} alt="" />
+                      <div className="overlay">
+                        <Link to={`/product/${product.id}`}>
+                          <AiOutlineSearch style={{ marginTop: "15px" }} />
+                        </Link>
+                        <div className="heart_icon_products">
+                          {favorites &&
+                          favorites.some((fav) => fav.id === product.id) ? (
+                            <TbHeartFilled
+                              onClick={() =>
+                                removefavorites(product?.id, product?.name)
+                              }
+                            />
+                          ) : (
+                            <TbHeart
+                              onClick={() =>
+                                addfavorites(product?.id, product?.name)
+                              }
+                            />
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="product-details">
+                      <div className="title">
+                        <h1>{product?.name.slice(0, 23)}</h1>
+                      </div>
+                      <div className="price">
+                        <p>${product?.new_price} </p>
+                        {product.old_price ? (
+                          <p className="before">$ {product.old_price}</p>
+                        ) : (
+                          <p></p>
+                        )}
+                        <p className="endirim">
+                          {Math.round(
+                            ((product.old_price - product.new_price) /
+                              product.old_price) *
+                              100
+                          )}
+                          % OFF
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))
               ) : (
-                <TbHeart
-                onClick={() => addfavorites(product?.id, product?.name)} 
-                />
+                <div className="no-favorit-produst">
+                  <img src="./images/Faqs/empty1.png" alt="" />
+                  <h1>Searched result not found</h1>
+                </div>
               )}
             </div>
-          </div>
-        </div>
-        <div className="product-details">
-          <div className="title">
-            <h1>{product?.name.slice(0, 23)}</h1>
-          </div>
-          <div className="price">
-            <p>${product?.new_price} </p>
-            {product.old_price ? (
-              <p className="before">$ {product.old_price}</p>
-            ) : (
-              <p></p>
-            )}
-            <p className="endirim">
-              {Math.round(
-                ((product.old_price - product.new_price) / product.old_price) *
-                  100
-              )}
-              % OFF
-            </p>
-          </div>
-        </div>
-      </div>
-    ))
-  ) : (
-    <div className="no-favorit-produst">
-      <img src="./images/Faqs/empty1.png" alt="" />
-      <h1>Searched result not found</h1>
-    </div>
-  )}
-</div>
-
             <div className="pag">
               <Pagination
                 totalPageCount={totalPageCount}
