@@ -151,6 +151,13 @@ nav {
 .nav-list ul li {
   width: max-content;
 }
+.log-reg{
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 33px;
+  color: #bebfbe;
+}
 
 .nav-list ul li a {
   font-family: "Hanken Grotesk", sans-serif;

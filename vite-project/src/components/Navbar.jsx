@@ -1,5 +1,5 @@
 import React from "react";
-import { useRef, useState } from "react";
+import { useRef, useState,useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -17,6 +17,35 @@ function Navbar({ dispatch, basketCount }) {
     navRef.current.classList.toggle("responsive_nav");
     console.log("kil");
   };
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Django'dan oturum bilgisini al
+    fetch("http://127.0.0.1:8000/api/check_auth/") // Bu URL'yi güncellemelisiniz
+      .then((response) => response.json())
+      .then((data) => setUser(data));
+  }, []);
+
+  const handleLogout = () => {
+    // Oturumu kapatma işlemi için API'ye istek gönder
+    fetch("http://127.0.0.1:8000/api/logout/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // Eğer token gerekiyorsa, token header'ını burada eklemelisin
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          setUser(null); // Kullanıcıyı null yaparak oturumu kapattığımızı belirtebilirsiniz
+        }
+      });
+  };
+
+
+
 
  const green='Green.png'
  const greenPath=`/static/${green}`
@@ -99,11 +128,15 @@ function Navbar({ dispatch, basketCount }) {
                 </div> */}
 
               </div>
-              <NavLink to="/login"><div className="user-icon">
-                <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80" alt="" />
-                {/* <NavLink to="/login"><AiOutlineUser/></NavLink> */}
-              </div></NavLink>
-
+              {user && user.authenticated ? (
+    <div>
+        Hello, {user.username}! <button onClick={handleLogout}>Logout</button>
+    </div>
+) : (
+    <div className="log-reg">
+        <a href="/login">Login</a> / <a href="/register">Register</a>
+    </div>
+)}
               <div className="nav-list" ref={navRef}>
                 <div className="nav-meridian">
                   <div className="nav-img-res">

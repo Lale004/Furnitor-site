@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from rest_framework.decorators import api_view  
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -6,6 +7,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 User = get_user_model()
 
@@ -43,3 +46,19 @@ class RegisterView(APIView):
             {"message": f"User {user.username} has been successfully created."},
             status=status.HTTP_201_CREATED,
         )
+
+class LogoutView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        request.user.auth_token.delete()  # Kullanıcının tokenını silerek oturumu kapat
+        return Response({"success": "Logout successful"}, status=status.HTTP_200_OK)
+    
+
+@api_view(['GET'])
+def check_auth(request):
+    if request.user.is_authenticated:
+        return Response({"authenticated": True, "username": request.user.username})
+    else:
+        return Response({"authenticated": False})

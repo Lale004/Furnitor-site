@@ -57,7 +57,7 @@ function Sign() {
                 navigate('/');
             } else {
                 const errorData = await response.json();
-                setErrorMsg('sehv userdi ya da kod sehvdi!')
+            setErrorMsg(errorData.error); 
             }
         } catch (error) {
             console.error('Unknown error occurred.', error);
@@ -68,8 +68,13 @@ function Sign() {
         <section>
             <div className="login">
                 <div className="login-text">
+              
                     <form onSubmit={handleLogin}>
                         <h1>Login</h1>
+                        {errorMsg && (
+                <div className="error-message">
+                    <img src="https://i.imgur.com/GnyDvKN.png" alt="" />{errorMsg}</div>
+            )}
                         <input type="text" placeholder='USERNAME' value={username} onChange={e => setUsername(e.target.value)} />
                         <div className="pasword-icon">
                             <input type={passwordType} placeholder='PASSWORD' value={password} onChange={e => setPassword(e.target.value)} />
@@ -81,13 +86,13 @@ function Sign() {
                             <input type="checkbox" /><p>Remember me</p>
                         </div>
                         <button className='loginBtn' type='submit'>LOGIN</button>
-                        {errorMsg && <p>{errorMsg}</p>}
+                        {/* {errorMsg && <p>{errorMsg}</p>} */}
                         <div className="or-sign">
-                            <hr />
+                            {/* <hr /> */}
 
-                            <span className='login-span'>or Login Up with</span>
+                            {/* <span className='login-span'>or Login Up with</span> */}
                         </div>
-                        <div className="forum-img">
+                        {/* <div className="forum-img">
                             <div className="login-f">
                                 <div className="login-watch-icon">
                                     <FaFacebook />
@@ -103,7 +108,7 @@ function Sign() {
                             </div>
 
 
-                        </div>
+                        </div> */}
 
                         <p className='account-text'>Don't have an account? <span className='sign-up-btn2'><Link to="/register"><b>Register</b></Link></span></p>
 

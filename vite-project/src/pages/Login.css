@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200;300;400&family=Outfit:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200;300;400&family=Outfit:wght@300;400;500&display=swap");
 
-.login{
+.login {
   display: flex;
   align-items: center;
 
@@ -8,89 +8,88 @@
   height: 110vh;
   justify-content: space-between;
 }
-.login-text{
+.login-text {
   width: 50%;
   margin-top: 100px;
 }
-.login-img{
+.login-img {
   width: 50%;
   /* object-fit: cover; */
   height: 100%;
 }
-.login-img img{
+.login-img img {
   object-fit: cover;
   height: 100%;
   width: 100%;
 }
-.login-text{
- padding:0 120px;
+.login-text {
+  padding: 0 120px;
 }
-.pasword-icon{
+.pasword-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-.pas-icons{
+.pas-icons {
   font-size: 25px;
   position: absolute;
   top: 22px;
   right: 15px;
   color: rgba(123, 123, 123, 0.573);
 }
-.remember-me{
+.remember-me {
   display: flex;
   align-items: center;
- justify-content: start;
- gap: 10px;
- margin-bottom: 40px;
+  justify-content: start;
+  gap: 10px;
+  margin-bottom: 40px;
 }
-.remember-me input{
-margin: 0 !important;
-width: 15px !important;
-height: 15px !important;
+.remember-me input {
+  margin: 0 !important;
+  width: 15px !important;
+  height: 15px !important;
 }
-.remember-me p{
-line-height: 20px;
-font-size: 17px;
-color: rgba(100, 100, 100, 0.855);
+.remember-me p {
+  line-height: 20px;
+  font-size: 17px;
+  color: rgba(100, 100, 100, 0.855);
 }
-.loginBtn{
+.loginBtn {
   width: 100%;
   padding: 18px;
-  background-color:#3a5041;
+  background-color: #3a5041;
   color: #ffffff;
   font-size: 20px;
   border-radius: 5px;
   border: none;
 }
-.or-sign{
+.or-sign {
   text-align: center;
-  margin: 40px auto  !important;
+  margin: 40px auto !important;
   position: relative;
-
 }
 
-.login-span{
-  position:absolute;
-  top:50%;
+.login-span {
+  position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   background-color: #ffffff;
   padding: 10px;
   font-size: 18px;
   font-weight: 300;
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: "Hanken Grotesk", sans-serif;
 }
-.forum-img{
+.forum-img {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
- padding: 0 40px;
+  padding: 0 40px;
   align-items: center;
 }
-.login-f{
+.login-f {
   display: flex;
   align-items: center;
   width: 40%;
@@ -100,31 +99,31 @@ color: rgba(100, 100, 100, 0.855);
   justify-content: center;
   padding: 12px 0;
   border-radius: 50px;
-  border: 2px solid  rgb(8, 8, 105);
+  border: 2px solid rgb(8, 8, 105);
 }
-.login-f p{
+.login-f p {
   font-size: 22px !important;
-  color:  rgb(8, 8, 105);
-  font-family: 'Outfit', sans-serif;
+  color: rgb(8, 8, 105);
+  font-family: "Outfit", sans-serif;
 }
-.login_g p{
+.login_g p {
   font-size: 22px !important;
-  font-family: 'Outfit', sans-serif;
-  color:  red;
+  font-family: "Outfit", sans-serif;
+  color: red;
 }
-.login-watch-icon_g{
+.login-watch-icon_g {
   font-size: 28px;
   border-radius: 50% !important;
   margin-top: 8px;
-  
-  color:red ;
+
+  color: red;
 }
-.login-text form h1{
+.login-text form h1 {
   margin-bottom: 20px;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 52px;
 }
-.login_g{
+.login_g {
   display: flex;
   align-items: center;
   width: 42%;
@@ -135,15 +134,27 @@ color: rgba(100, 100, 100, 0.855);
   flex-wrap: nowrap;
   gap: 10px;
   justify-content: center;
-
 }
-.login-watch-icon{
+.login-watch-icon {
   font-size: 22px;
   border-radius: 50% !important;
   margin-top: 7px;
   color: rgb(8, 8, 105);
 }
-.account-text{
+.account-text {
   text-align: center;
   margin: 60px 0;
+}
+
+.error-message {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid;
+  margin: 5px 0px;
+  padding: 15px 15px 15px 20px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  color: #d8000c;
+  background-color: #ffbaba;
 }

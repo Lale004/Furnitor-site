@@ -1,18 +1,17 @@
 import { useState, useEffect } from "react";
-import Confetti from "react-confetti"
+import Confetti from "react-confetti";
 import Cards from "react-credit-cards-2";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
 import { connect } from "react-redux";
 import "./CartPage.css";
 import { AiFillCheckCircle } from "react-icons/ai";
+import { BiError } from "react-icons/bi";
 function CartPage({ products, basket, dispatch }) {
+  const iconsremove = "iconsremove.png";
+  const iconsremovePath = `/static/${iconsremove}`;
 
-const iconsremove='iconsremove.png'
-const iconsremovePath=`/static/${iconsremove}`
-
-const empty2='empty2.png'
-const empty2Path=`/static/${empty2}`
-
+  const empty2 = "empty2.png";
+  const empty2Path = `/static/${empty2}`;
 
   useEffect(() => {
     document.title = "Card";
@@ -63,6 +62,7 @@ const empty2Path=`/static/${empty2}`
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
     setState((prev) => ({ ...prev, [name]: value }));
+    setErrorMessage("");
   };
 
   const handleInputFocus = (evt) => {
@@ -89,7 +89,7 @@ const empty2Path=`/static/${empty2}`
       state.cvc === "" ||
       state.name === ""
     ) {
-      setErrorMessage("Please fill in all fields!");
+      setErrorMessage(" Please fill in all fields!");
       return;
     } else {
       setErrorMessage("");
@@ -97,15 +97,15 @@ const empty2Path=`/static/${empty2}`
     handleOkButtonClick();
   };
 
-  const removeproduct = (id)=>{
+  const removeproduct = (id) => {
     let tempBasket = [...basket];
-  tempBasket = tempBasket.filter((t) => t.id !== id);
+    tempBasket = tempBasket.filter((t) => t.id !== id);
     dispatch({
       type: "SET_BASKET",
       payload: tempBasket,
     });
     localStorage.setItem("basket", JSON.stringify(tempBasket));
-  }
+  };
 
   return (
     <section>
@@ -164,7 +164,10 @@ const empty2Path=`/static/${empty2}`
                           <div className="cart-total">
                             <h3>${total} </h3>
                           </div>
-                          <div className="cart-remove" onClick={()=>removeproduct(basketItem.id)}>
+                          <div
+                            className="cart-remove"
+                            onClick={() => removeproduct(basketItem.id)}
+                          >
                             <img src={iconsremovePath} alt="" />
                           </div>
                         </div>
@@ -173,10 +176,12 @@ const empty2Path=`/static/${empty2}`
                   })
                 ) : (
                   <div className="no-favorit-cart">
-                  <img src={empty2Path} alt="" />
+                    <img src={empty2Path} alt="" />
                     <h1>Your cart is empty</h1>
-                    <p>Looks like you have not added anything to you cart. Go ahead & explore top catogeries.</p>
-                 
+                    <p>
+                      Looks like you have not added anything to you cart. Go
+                      ahead & explore top catogeries.
+                    </p>
                   </div>
                 )
               ) : (
@@ -241,7 +246,6 @@ const empty2Path=`/static/${empty2}`
         </div>
       </div>
       {crediModal && (
-
         <div className="creditCard">
           <div className="overlay-contact" onClick={toggleCrediModal}></div>
           <div className="credit-modal">
@@ -264,6 +268,16 @@ const empty2Path=`/static/${empty2}`
                   value={state.number}
                   onChange={handleInputChange}
                   onFocus={handleInputFocus}
+                  maxLength="3"
+                  onKeyDown={(e) => {
+                    if (e.key === "Backspace" || e.key === "Delete") {
+                      return;
+                    }
+
+                    if (e.target.value.length >= 16 || !/^\d$/.test(e.key)) {
+                      e.preventDefault();
+                    }
+                  }}
                 />
                 <input
                   type="text"
@@ -272,6 +286,14 @@ const empty2Path=`/static/${empty2}`
                   value={state.name}
                   onChange={handleInputChange}
                   onFocus={handleInputFocus}
+                  onKeyDown={(e) => {
+                    if (e.key === " " && e.target.selectionStart === 0) {
+                      e.preventDefault();
+                    } else if (e.key.match(/[^A-Za-z\s]/)) {
+                      e.preventDefault();
+                    }
+                  }}
+                  style={{ textTransform: "capitalize" }}
                 />
                 <div className="card-ex">
                   <input
@@ -282,6 +304,18 @@ const empty2Path=`/static/${empty2}`
                     value={state.expiry}
                     onChange={handleInputChange}
                     onFocus={handleInputFocus}
+                    maxLength="3"
+                    onKeyDown={(e) => {
+                      // Eğer kullanıcı Backspace veya Delete tuşuna basarsa silmeye izin ver
+                      if (e.key === "Backspace" || e.key === "Delete") {
+                        return;
+                      }
+
+                      // Eğer cvc 3 hane ise veya rakam değilse, işlemi engelle
+                      if (e.target.value.length >= 4 || !/^\d$/.test(e.key)) {
+                        e.preventDefault();
+                      }
+                    }}
                   />
                   <input
                     className="numberinput"
@@ -291,10 +325,27 @@ const empty2Path=`/static/${empty2}`
                     value={state.cvc}
                     onChange={handleInputChange}
                     onFocus={handleInputFocus}
+                    maxLength="3"
+                    onKeyDown={(e) => {
+                      if (e.key === "Backspace" || e.key === "Delete") {
+                        return;
+                      }
+
+                      if (e.target.value.length >= 3 || !/^\d$/.test(e.key)) {
+                        e.preventDefault();
+                      }
+                    }}
                   />
                 </div>
                 {errorMessage && (
-                  <p className="error-message">{errorMessage}</p>
+                  <p className="error-mes">
+                    {" "}
+                    <span className="eror-icon">
+                      {" "}
+                      <BiError />
+                    </span>
+                    {errorMessage}
+                  </p>
                 )}
                 <button className="crediBtn" onClick={handleSubmitt}>
                   Submit
