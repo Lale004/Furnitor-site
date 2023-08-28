@@ -1,11 +1,10 @@
 import React, { useReducer, useEffect, useState } from "react";
 import { AiFillCheckCircle } from "react-icons/ai";
-
 function ContactSection() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
+  const [showModal, setShowModal] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -24,7 +23,8 @@ function ContactSection() {
       const data = await response.json();
       if (response.ok) {
         // E-posta gönderimi başarılıysa
-        alert("Teşekkürler! İletişim bilgileriniz kaydedildi.");
+        setShowModal(true);
+        // alert("Teşekkürler! İletişim bilgileriniz kaydedildi.");
       } else {
         alert("Formu göndermek mümkün olmadı: " + data.error);
         console.log(data.error);
@@ -83,6 +83,24 @@ function ContactSection() {
               Send Message
             </button>
           </form>
+          {showModal && (
+  <div className="contact-modal-overlay">
+    <div className="contact-modal">
+      <div className="contact-modal-content">
+        <AiFillCheckCircle className="contact-modal-icon" />
+        <p>Thank you! Your contact information has been saved.</p>
+        <button className="contact-modal-close-btn" onClick={() => {
+  setShowModal(false);
+  setName("/");
+  setEmail("/");
+  setMessage("/");
+}}>
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+)}
         </div>
       </div>
     </div>

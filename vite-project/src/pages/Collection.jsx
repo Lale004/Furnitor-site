@@ -14,6 +14,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { TbHeartFilled, TbHeart } from "react-icons/tb";
 
 function Collection() {
+  const emptyse='empty1.png'
+  const empty2Path=`/static/${emptyse}`
   const favorites = useSelector((state) => state.favorites);
   const dispatch = useDispatch();
   const [datas, setDatas] = useState([]);
@@ -100,7 +102,7 @@ function Collection() {
       }
     });
   const [activePage, setActivePage] = useState(1);
-  const productPerPage = 9;
+  const productPerPage = 12;
   const totalPageCount = Math.ceil(filteredProducts.length / productPerPage);
   if (activePage > totalPageCount) {
     setActivePage(totalPageCount);
@@ -357,7 +359,7 @@ function Collection() {
                   style={{ cursor: "pointer", userSelect: "none" }}
                   onClick={() => setFilters({ ...filters, category: "all" })}
                 >
-                  All ({datas.length})
+                  All {/* All ({datas.length}) */}
                 </li>
                 {categories.map((category) => (
                   <li
@@ -368,12 +370,7 @@ function Collection() {
                       setFilters({ ...filters, category: category })
                     }
                   >
-                    {category} (
-                    {
-                      datas.filter((product) => product.category == category)
-                        .length
-                    }
-                    )
+                    {category}
                   </li>
                 ))}
               </ul>
@@ -586,7 +583,7 @@ function Collection() {
                 ))
               ) : (
                 <div className="no-favorit-produst">
-                  <img src="./images/Faqs/empty1.png" alt="" />
+                  <img src={empty2Path} alt="" />
                   <h1>Searched result not found</h1>
                 </div>
               )}

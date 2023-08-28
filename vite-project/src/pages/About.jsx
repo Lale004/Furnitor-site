@@ -19,7 +19,7 @@ function About() {
       <ScrollToTop smooth top="20" width="20" height="20" color="#fff"/>
         <div className="container">
           <div className="header-content">
-            <h1>Meridian Furniture</h1>
+            <h1>Utopia Furniture</h1>
             <p>
             As a direct importer, we are able to provide the most competitive pricing while still maintaining the highest level of quality and service. We are constantly updating our product line, so visit our website often to see whats new.
             </p>
@@ -64,15 +64,15 @@ function About() {
             </div>
             
             <div className="section2-details">
-              <p className="section2-title">We Are Meridian</p>
-              <p className="section2-description">  Family owned and operated for over 20 years, Meridian Furniture has grown to become the premier home furnishings importer & distributor and continues to rapidly grow in recognition for offering top quality furniture and unique designs at an affordable price. Featuring a product line of over 5,000 SKUs, you can be sure to find something you'll love for any room in your home! With our user friendly portal, dealers have access to real-time stock as well as a vast variety of drop-shipping options ranging from Curbside to White Glove.  We strive to deliver today's best customer service, while maintaining a personal relationship with our dealers so they can ensure success and profitability.
+              <p className="section2-title">We Are Utopia</p>
+              <p className="section2-description">  Family owned and operated for over 20 years, Utopia Furniture has grown to become the premier home furnishings importer & distributor and continues to rapidly grow in recognition for offering top quality furniture and unique designs at an affordable price. Featuring a product line of over 5,000 SKUs, you can be sure to find something you'll love for any room in your home! With our user friendly portal, dealers have access to real-time stock as well as a vast variety of drop-shipping options ranging from Curbside to White Glove.  We strive to deliver today's best customer service, while maintaining a personal relationship with our dealers so they can ensure success and profitability.
               </p>
 
             </div>
           </div>
     
     <div className="video-sec">
-      <h1>How are the mebels of the Meridian mebel store prepared?</h1>
+      <h1>How are the mebels of the Utopia mebel store prepared?</h1>
 <VdeoAbout/>
     </div>
            </div>

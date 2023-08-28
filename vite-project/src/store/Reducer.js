@@ -4,6 +4,7 @@ const initialState = {
   favorites: JSON.parse(localStorage.getItem("favorites")) || [],
   card:[],
   head:{},
+  isAuthenticated : !!localStorage.getItem("token")
 };
 export default function Reducer(state = initialState, action) {
   switch (action.type) {
@@ -17,7 +18,9 @@ export default function Reducer(state = initialState, action) {
       return { ...state, card: [...card, action.payload] };
     case "ADD_HEAD":
       return { ...state, head: [...head, action.payload] };
-  
+    case "SET_AUTH":
+      return { ...state, isAuthenticated: action.payload };
+      
   }
   return state;
 }

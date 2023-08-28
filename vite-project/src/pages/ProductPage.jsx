@@ -13,6 +13,8 @@ import ScrollToTop from "react-scroll-to-top";
 import SingleCardSwiper from "../components/SingleCartSwiper";
 import { MdLock } from "react-icons/md";
 function ProductPage({ products, basket, dispatch }) {
+  const Carbon='carbon_delivery.png'
+  const CarbonPath=`/static/${Carbon}`
   useEffect(() => {
     document.title = 'Single product';
   }, []);
@@ -132,7 +134,7 @@ function ProductPage({ products, basket, dispatch }) {
               <img src="../images/ProductPage/Frame 180.png" alt="" />
             </div> */}
             <div className="delivery">
-              <img src="../images/ProductPage/carbon_delivery.png" alt="" />
+              <img src={CarbonPath} alt="" />
               <div className="delivery-text">
                 <p>Free UK Delivery</p>
                 <p>
@@ -426,7 +428,7 @@ function ProductPage({ products, basket, dispatch }) {
             </div>
           </div>
         </div>
-        <div className="sets-title">
+        {/* <div className="sets-title">
           <h1>Shop Our Other Popular Sets</h1>
         </div>
         <div className="sets">
@@ -574,7 +576,7 @@ function ProductPage({ products, basket, dispatch }) {
             </SwiperSlide>
           </Swiper>
         </div>
-
+ */}
 
         {/* <Review /> */}
       </div>

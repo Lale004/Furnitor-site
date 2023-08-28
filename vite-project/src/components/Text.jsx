@@ -55,27 +55,32 @@ function Text() {
           </div>
           <div className="contactt">
             <div className="contact-col">
-              <span>
-            
+          <span>
+            <BsTelephoneFill/>
               </span>
+      
               <div className="contact-about">
                 <h3>Phone Number</h3>
                 <p>(62) 1829017</p>
               </div>
             </div>
             <div className="contact-col">
+            <a href="Hello@Utopia.com" target="_blank"> 
               <span>
               <FiMail/>
               </span>
+              </a>
               <div className="contact-about" >
                 <h3>Email</h3>
-                <p>Hello@Meridian.com</p>
+                <p>Hello@Utopia.com</p>
               </div>
             </div>
             <div className="contact-col">
+            <a href="https://goo.gl/maps/JVMEyM4xbPNbALvS9" target="_blank">
               <span>
               <MdOutlineLocationOn/>
               </span>
+              </a>
               <div className="contact-about">
                 <h3>Map Street</h3>
                 <p>John Bucarest St. 199</p>

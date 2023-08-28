@@ -20,9 +20,14 @@ function Blog() {
           console.log(data);
         });
     }, []);
+const Vahida='Vahida.png'
+const VahidaPath=`/static/${Vahida}`
 
+const Lala='Lala.png'
+const LalaPath=`/static/${Lala}`
 
-
+const Dilara='Dilara.png'
+const DilaraPath=`/static/${Dilara}`
   return (
     <main>
 
@@ -39,31 +44,31 @@ function Blog() {
         <div className="yazicilar">
           <div className="yazici">
             <div className="yazici_img">
-            <img src="https://i.pinimg.com/736x/c0/6e/d0/c06ed026b6a1a8563340a614d577a756.jpg" alt="" />
+            <img src={VahidaPath} alt="" />
             </div>
             <div className="yazici_adi">
            <h3>
-           Anna Torv
+         Vahida Rasulova
            </h3>
             </div>
           </div>
           <div className="yazici">
             <div className="yazici_img">
-           <img src="https://i.pinimg.com/736x/41/06/bc/4106bc059ec6b52bae0384be355efe63.jpg" alt="" />
+           <img src={LalaPath} alt="" />
             </div>
             <div className="yazici_adi">
            <h3>
-           David Paulsen
+          Lala Gojayeva
            </h3>
             </div>
           </div>
           <div className="yazici">
             <div className="yazici_img">
-              <img src="https://i.pinimg.com/564x/02/bb/91/02bb91e7384431515474e44f3d952120.jpg" alt="" />
+              <img src={DilaraPath} alt="" />
             </div>
             <div className="yazici_adi">
            <h3>
-           Paul Rudd
+           Dilara Mammadli
            </h3>
             </div>
           </div>

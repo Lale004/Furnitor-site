@@ -45,7 +45,7 @@ function Faqs() {
               <i></i>
               <h2>How much is shipping?</h2>
               <p>
-              Shipping prices inside EU countries are included in all FIT products. For shipping outside the EU, please contact us at hello@meridian-furniture.com
+              Shipping prices inside EU countries are included in all FIT products. For shipping outside the EU, please contact us at hello@utopia-furniture.com
               </p>
             </li>
             <li>
@@ -112,7 +112,7 @@ Once your order has been delivered
             <li>
               <input type="checkbox" defaultChecked />
               <i></i>
-              <h2>What do I do if I have a problem with a MERIDIAN product?</h2>
+              <h2>What do I do if I have a problem with a UTOPIA product?</h2>
               <p>
               We will help you with any queries after your purchase. Contact us at hello@meridian-furniture.com if you require any assistance with your product after purchase.
               </p>

@@ -1,16 +1,19 @@
 import React from "react";
-import { useRef, useState,useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes,FaUser } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 import { TbHeartFilled, TbHeart } from "react-icons/tb";
-import { HiOutlineShoppingBag } from "react-icons/hi";
+import { HiOutlineShoppingBag} from "react-icons/hi";
+
 import { AiOutlineUser } from "react-icons/ai";
+import {  useSelector } from "react-redux";
 
 import { connect } from "react-redux";
 function Navbar({ dispatch, basketCount }) {
-  const [barActiveInput, setBarActiveInput] = useState(false)
+  const isAuthenticated = useSelector((state) => state.isAuthenticated);
+  const [barActiveInput, setBarActiveInput] = useState(false);
 
   const navRef = useRef();
   const showNavbar = () => {
@@ -29,26 +32,29 @@ function Navbar({ dispatch, basketCount }) {
 
   const handleLogout = () => {
     // Oturumu kapatma işlemi için API'ye istek gönder
-    fetch("http://127.0.0.1:8000/api/logout/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        // Eğer token gerekiyorsa, token header'ını burada eklemelisin
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          setUser(null); // Kullanıcıyı null yaparak oturumu kapattığımızı belirtebilirsiniz
-        }
-      });
+    // fetch("http://127.0.0.1:8000/api/logout/", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     // Eğer token gerekiyorsa, token header'ını burada eklemelisin
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     if (data.success) {
+    //       setUser(null); // Kullanıcıyı null yaparak oturumu kapattığımızı belirtebilirsiniz
+    //     }
+    //   });
+    localStorage.removeItem("token")
+    dispatch({
+      type: "SET_AUTH",
+      payload: false,
+    });
+    window.location.href = "http://127.0.0.1:8000/";
   };
 
-
-
-
- const green='Green.png'
- const greenPath=`/static/${green}`
+  const green = "Green.png";
+  const greenPath = `/static/${green}`;
   return (
     <>
       <div className="sale-text">
@@ -59,9 +65,11 @@ function Navbar({ dispatch, basketCount }) {
       <div className="navbar">
         <div className="container">
           <nav>
-            <Link to="/"><div className="nav-img">
-              <img src={greenPath} alt="" />
-            </div></Link>
+            <Link to="/">
+              <div className="nav-img">
+                <img src={greenPath} alt="" />
+              </div>
+            </Link>
             <div className="nav-list">
               <ul className="ul-bir ul-home">
                 <li>
@@ -99,49 +107,57 @@ function Navbar({ dispatch, basketCount }) {
                   
                 </ul>
               </div> */}
-
-              <div className="nav-icon">
-                <NavLink to="/cart">
-                  {" "}
-                  <div className="icon-shop">
-                    <div className="nav-shop-icon">
-                      <HiOutlineShoppingBag />
+              {isAuthenticated ? (
+                <div className="nav-icon">
+                  <NavLink to="/cart">
+                    {" "}
+                    <div className="icon-shop">
+                      <div className="nav-shop-icon">
+                        <HiOutlineShoppingBag />
+                      </div>
+                      <span className="icn">
+                        {basketCount ? `${basketCount}` : "0"}
+                      </span>
                     </div>
-                    <span className="icn">
-                      {basketCount ? `${basketCount}` : "0"}
-                    </span>
-                  </div>
-                </NavLink>
+                  </NavLink>
 
-                <NavLink to="/favorites">
-                  {" "}
-                  <div className="nav-heart">
+                  <NavLink to="/favorites">
+                    {" "}
+                    <div className="nav-heart">
+                      <TbHeartFilled />
+                    </div>
+                  </NavLink>
+                </div>
+              ) : (
+                ""
+              )}
 
-                    <TbHeartFilled />
-                  </div>
-                </NavLink>
-
-                {/* <div className="searchBar">
+              {/* <div className="searchBar">
                   <input type="text" placeholder="Search" className={barActiveInput ? 'searcBarInput barActiveInput':'searcBarInput'}/>
                   <button type="submit" className="nav-searchBtn" onClick={() => setBarActiveInput(!barActiveInput)}><FiSearch/></button>
                
                 </div> */}
 
-              </div>
-              {user && user.authenticated ? (
-    <div>
-        Hello, {user.username}! <button onClick={handleLogout}>Logout</button>
-    </div>
-) : (
-    <div className="log-reg">
-        <a href="/login">Login</a> / <a href="/register">Register</a>
-    </div>
-)}
+              {isAuthenticated ? (
+                <div>
+                  <div class="dropdown">
+                    <span> <FaUser /></span>
+
+  <div class="dropdown-content" onClick={handleLogout}>
+    <p >Logout</p>
+  </div>
+</div>
+                 
+                </div>
+              ) : (
+                <div className="log-reg">
+                  <a href="/login">Login</a> / <a href="/register">Register</a>
+                </div>
+              )}
               <div className="nav-list" ref={navRef}>
                 <div className="nav-meridian">
                   <div className="nav-img-res">
                     <img src={greenPath} alt="" />
-
                   </div>
                   <button onClick={showNavbar} className=" close-icon">
                     <FaTimes />
@@ -173,11 +189,7 @@ function Navbar({ dispatch, basketCount }) {
                     <NavLink to="/faqs">FAQ</NavLink>
                   </li>
                 </ul>
-
-
               </div>
-
-
             </div>
           </nav>
         </div>

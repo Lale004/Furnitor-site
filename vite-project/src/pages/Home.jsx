@@ -565,8 +565,8 @@ function Home() {
                       <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80" alt="" />
                     </div>
                     <div className="set-details">
-                      <p className="set-name">Alma Velvet Armless</p>
-                      <p className="set-price">£3,400.00</p>
+                      <p className="set-name">Nelson corner sofa</p>
+                      <p className="set-price">$1300</p>
                       <button>View Set</button>
                     </div>
                   </div>
@@ -580,8 +580,8 @@ function Home() {
                       <img src="https://images.unsplash.com/photo-1619596662481-085e45d69762?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGNoYWlyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="" />
                     </div>
                     <div className="set-details">
-                      <p className="set-name">Alma Velvet Armless</p>
-                      <p className="set-price">£3,400.00</p>
+                      <p className="set-name">Sofa set Solo</p>
+                      <p className="set-price">$1000</p>
                       <button>View Set</button>
                     </div>
                   </div>
@@ -594,8 +594,38 @@ function Home() {
                       <img src="https://images.unsplash.com/photo-1575806980151-1078f5578718?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fGNoYWlyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="" />
                     </div>
                     <div className="set-details">
-                      <p className="set-name">Alma Velvet Armless</p>
-                      <p className="set-price">£3,400.00</p>
+                      <p className="set-name">Corner Sofa Acelya</p>
+                      <p className="set-price">$1800</p>
+                      <button>View Set</button>
+                    </div>
+                  </div>
+                </Link>
+              </SwiperSlide>
+            
+              <SwiperSlide>
+                {" "}
+                <Link to="/products">
+                  <div className="set">
+                    <div className="set-img">
+                      <img src="https://images.unsplash.com/photo-1544457070-4cd773b4d71e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTExfHxjaGFpcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+                    </div>
+                    <div className="set-details">
+                      <p className="set-name">Chairs Vivaldi</p>
+                      <p className="set-price">$1300</p>
+                      <button>View Set</button>
+                    </div>
+                  </div>
+                </Link>
+              </SwiperSlide>
+              <SwiperSlide>
+                <Link to="/products">
+                  <div className="set">
+                    <div className="set-img">
+                      <img src="https://images.unsplash.com/photo-1575806980151-1078f5578718?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fGNoYWlyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="" />
+                    </div>
+                    <div className="set-details">
+                      <p className="set-name">Hisar corner sofa</p>
+                      <p className="set-price">$900</p>
                       <button>View Set</button>
                     </div>
                   </div>
@@ -608,7 +638,7 @@ function Home() {
                       <img src="https://images.unsplash.com/photo-1550226891-ef816aed4a98?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTZ8fGNoYWlyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="" />
                     </div>
                     <div className="set-details">
-                      <p className="set-name">Alma Velvet Armless</p>
+                      <p className="set-name">Alma Velvet sofa</p>
                       <p className="set-price">£3,400.00</p>
                       <button>View Set</button>
                     </div>{" "}
@@ -623,50 +653,7 @@ function Home() {
                       <img src="https://images.unsplash.com/photo-1544457070-4cd773b4d71e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTExfHxjaGFpcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
                     </div>
                     <div className="set-details">
-                      <p className="set-name">Alma Velvet Armless</p>
-                      <p className="set-price">£3,400.00</p>
-                      <button>View Set</button>
-                    </div>
-                  </div>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide>
-                <Link to="/products">
-                  <div className="set">
-                    <div className="set-img">
-                      <img src="https://images.unsplash.com/photo-1575806980151-1078f5578718?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fGNoYWlyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="" />
-                    </div>
-                    <div className="set-details">
-                      <p className="set-name">Alma Velvet Armless</p>
-                      <p className="set-price">£3,400.00</p>
-                      <button>View Set</button>
-                    </div>
-                  </div>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide>
-                <Link to="/products">
-                  <div className="set">
-                    <div className="set-img">
-                      <img src="https://images.unsplash.com/photo-1550226891-ef816aed4a98?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTZ8fGNoYWlyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="" />
-                    </div>
-                    <div className="set-details">
-                      <p className="set-name">Alma Velvet Armless</p>
-                      <p className="set-price">£3,400.00</p>
-                      <button>View Set</button>
-                    </div>{" "}
-                  </div>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <Link to="/products">
-                  <div className="set">
-                    <div className="set-img">
-                      <img src="https://images.unsplash.com/photo-1544457070-4cd773b4d71e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTExfHxjaGFpcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
-                    </div>
-                    <div className="set-details">
-                      <p className="set-name">Alma Velvet Armless</p>
+                      <p className="set-name">Alma Velvet Chairs</p>
                       <p className="set-price">£3,400.00</p>
                       <button>View Set</button>
                     </div>
@@ -690,7 +677,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <section>
+      {/* <section>
         <div className="container">
           <div className="center-text">
             <h1>Explore each unique collection</h1>
@@ -1090,7 +1077,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section>
         <div className="container">
           <div className="section2-sing">
